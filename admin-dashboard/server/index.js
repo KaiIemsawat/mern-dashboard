@@ -10,6 +10,7 @@ import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
+import connectDB from "./dbConnect/db.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -21,9 +22,16 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+connectDB();
 
 /* ROUTES */
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
+
+/* MONGOOSE */
+const PORT = process.env.PORT || 9001;
+app.listen(PORT, () => {
+    console.log(`SERVER HAS STARTED ON PORT ------- ${PORT}`);
+});
