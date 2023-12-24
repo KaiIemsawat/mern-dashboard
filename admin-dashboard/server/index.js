@@ -12,6 +12,9 @@ import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 import connectDB from "./dbConnect/db.js";
 
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
+
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
@@ -35,3 +38,6 @@ const PORT = process.env.PORT || 9001;
 app.listen(PORT, () => {
     console.log(`SERVER HAS STARTED ON PORT ------- ${PORT}`);
 });
+
+/* ONLY ADD DATA ONE TIME */
+User.insertMany(dataUser);
