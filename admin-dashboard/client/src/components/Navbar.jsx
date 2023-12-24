@@ -20,7 +20,7 @@ import FlexBetween from "./FlexBetween";
 import { setMode } from "state";
 import profileImage from "assets/profile.jpeg";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const dispatch = useDispatch();
     const theme = useTheme();
 
@@ -38,7 +38,7 @@ const Navbar = () => {
                     <IconButton
                         // disableElevation // to disable hover effect
                         // disableRipple // to disable hover effect
-                        onClick={() => console.log("open/close sidebar")}
+                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                     >
                         <MenuIcon />
                     </IconButton>

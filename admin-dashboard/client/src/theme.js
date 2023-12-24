@@ -47,15 +47,15 @@ export const tokensDark = {
     secondary: {
         // yellow
         50: "#f6f6e6", // manually adjusted
-        100: "#fff5dc",
-        200: "#ffebb9",
-        300: "#ffe195",
-        400: "#ffd772",
-        500: "#ffcd4f",
-        600: "#cca43f",
-        700: "#997b2f",
-        800: "#665220",
-        900: "#332910",
+        100: "#fdefe3",
+        200: "#fbdfc6",
+        300: "#f8cfaa",
+        400: "#f6bf8d",
+        500: "#f4af71",
+        600: "#c38c5a",
+        700: "#926944",
+        800: "#62462d",
+        900: "#312317",
     },
 };
 
@@ -91,7 +91,7 @@ export const themeSettings = (mode) => {
                       },
                       secondary: {
                           ...tokensDark.secondary,
-                          main: tokensDark.secondary[300],
+                          main: tokensDark.secondary[500],
                       },
                       neutral: {
                           ...tokensDark.grey,
