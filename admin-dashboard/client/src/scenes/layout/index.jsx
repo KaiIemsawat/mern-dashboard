@@ -5,10 +5,14 @@ import { Outlet } from "react-router-dom";
 
 import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
+import { useGetUserQuery } from "state/api";
 
 const Layout = () => {
     const isNonMoble = useMediaQuery("(min-width: 600px)");
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const userId = useSelector((state) => state.global.userId);
+    const { data } = useGetUserQuery(userId); // API call
+    console.log("Data", data);
 
     return (
         <Box display={isNonMoble ? "flex" : "blok"} width="100%" height="100%">

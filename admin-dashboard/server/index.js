@@ -40,4 +40,4 @@ app.listen(PORT, () => {
 });
 
 /* ONLY ADD DATA ONE TIME */
-User.insertMany(dataUser);
+// User.insertMany(dataUser);
