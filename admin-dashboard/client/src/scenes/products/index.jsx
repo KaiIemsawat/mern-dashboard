@@ -15,7 +15,10 @@ import {
 import { useGetProductsQuery } from "state/api";
 import Header from "components/Header";
 
-const index = () => {
+const Products = () => {
+    const { data, isLoading } = useGetProductsQuery();
+    console.log("data", data);
+
     return (
         <Box>
             <Header title="PRODUCT" subtitle="See your list of products." />
@@ -23,4 +26,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Products;
