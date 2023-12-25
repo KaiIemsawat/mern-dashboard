@@ -11,12 +11,12 @@ const Layout = () => {
     const isNonMoble = useMediaQuery("(min-width: 600px)");
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const userId = useSelector((state) => state.global.userId);
-    const { data } = useGetUserQuery(userId); // API call
-    console.log("Data", data);
+    const { data } = useGetUserQuery(userId); // * --- API call ---
 
     return (
         <Box display={isNonMoble ? "flex" : "blok"} width="100%" height="100%">
             <Sidebar
+                user={data || {}} // haveing '|| {}' to avoid issue while loading and have 'undefined' value
                 isNonMoble={isNonMoble}
                 drawerWidth="250px"
                 isSidebarOpen={isSidebarOpen}
@@ -24,6 +24,7 @@ const Layout = () => {
             />
             <Box>
                 <Navbar
+                    user={data || {}} // haveing '|| {}' to avoid issue while loading and have 'undefined' value
                     isSidebarOpen={isSidebarOpen}
                     setIsSidebarOpen={setIsSidebarOpen}
                 />
