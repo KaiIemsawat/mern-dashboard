@@ -13,9 +13,14 @@ import {
 } from "@mui/material";
 
 import { useGetProductsQuery } from "state/api";
+import Header from "components/Header";
 
 const index = () => {
-    return <div>index</div>;
+    return (
+        <Box>
+            <Header title="PRODUCT" subtitle="See your list of products." />
+        </Box>
+    );
 };
 
 export default index;
