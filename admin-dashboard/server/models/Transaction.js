@@ -6,10 +6,10 @@ const TransactionSchema = new mongoose.Schema(
         cost: String,
         products: {
             type: [mongoose.Types.ObjectId],
-            of: Number
-        }
+            of: Number,
+        },
     },
-    { timestamp: true }
+    { timestamps: true }
 );
 
 const Transaction = mongoose.model("Transaction", TransactionSchema);
