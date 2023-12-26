@@ -37,7 +37,7 @@ export const tokensDark = {
         100: "#d5d4e2",
         200: "#acaac5",
         300: "#827fa9",
-        400: "#59558c",
+        400: "#3e397c", // manually adjusted
         500: "#2f2a6f",
         600: "#262259",
         700: "#1c1943",
