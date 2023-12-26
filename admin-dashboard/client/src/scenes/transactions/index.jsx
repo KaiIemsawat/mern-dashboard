@@ -15,6 +15,8 @@ const Transactions = () => {
     const [sort, setSort] = useState({});
     const [search, setSearch] = useState("");
 
+    const [searchInput, setSearchInput] = useState("");
+
     const { data, isLoading } = useGetTransactionsQuery({
         page,
         pageSize,
@@ -92,7 +94,8 @@ const Transactions = () => {
                     rows={(data && data.transactions) || []}
                     columns={columns}
                     rowCount={(data && data.total) || 0}
-                    rowsPerPageOptions={[20, 50, 100]}
+                    // rowsPerPageOptions={[20, 50, 100]}
+                    pageSizeOptions={[20, 50, 100]}
                     pagination
                     page={page}
                     pageSize={pageSize}
@@ -104,6 +107,9 @@ const Transactions = () => {
                         setSort(...newSortModel)
                     }
                     components={{ Toolbar: DataGridCustomToolbar }}
+                    componentsProps={{
+                        toolbar: { searchInput, setSearchInput, setSearch },
+                    }}
                 />
             </Box>
         </Box>

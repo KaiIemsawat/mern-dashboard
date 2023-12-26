@@ -63,7 +63,6 @@ export const getTransactions = async (req, res) => {
             name: { $regex: search, $options: "i" },
         });
 
-        console.log(total, "Total");
         res.status(200).json({
             transactions,
             total,
